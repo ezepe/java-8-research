@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.keze.java8.java8keze.ifuncional.IOperation;
+
 public class LambdaLista {
 	
 	public void orderList() {
@@ -24,12 +26,19 @@ public class LambdaLista {
 
 		
 	}
+	
+	public double interfazFuncional() {
+		
+		IOperation aOperation = (double x, double y) -> (x+y)/2;
+		return aOperation.calcularPromedio(3, 9.1);
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		LambdaLista aLambdaLista = new LambdaLista();
-		aLambdaLista.orderList();
+//		aLambdaLista.orderList();
+		System.out.println( aLambdaLista.interfazFuncional());
 	}
 
 }
