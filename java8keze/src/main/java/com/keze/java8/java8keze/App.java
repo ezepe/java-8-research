@@ -8,6 +8,29 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+//    	LambdaLista aLambdaLista = new LambdaLista();
+//    	aLambdaLista.simplePrint();
+//    	aLambdaLista.filterAPIStream("V");
+//    	aLambdaLista.orderAPIStream();
+//    	aLambdaLista.countAPIStream();
+    	
+//    	UsingOptionalClass uOC = new UsingOptionalClass();
+//    	uOC.orElse(null);
+//    	uOC.orElseThrow(null);
+//    	uOC.isPresent("Pepe");
+
+//    	UsingParallelStream uPS = new UsingParallelStream();
+//    	uPS.testSimpleStream();
+//    	uPS.testParallelStream();
+    	
+    	UsingMap uM = new UsingMap();
+//    	uM.simplePrint();
+    	
+    	uM.putIsAbsent();
+//    	uM.computeIsPresent();
+//    	uM.getOrDefault();
+//    	uM.newPrint();
+    	uM.RecoletWithFilter();
+    
     }
 }

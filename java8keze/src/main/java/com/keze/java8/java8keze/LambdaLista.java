@@ -4,41 +4,45 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.omg.Messaging.SyncScopeHelper;
+
 import com.keze.java8.java8keze.ifuncional.IOperation;
 
 public class LambdaLista {
-	
-	public void orderList() {
-		
+
 		List<String> aList = new ArrayList<String>();
 		
-		aList.add("Eze");
-		aList.add("Lore");
-		aList.add("Valen");
-		aList.add("Perez");
-		aList.add("Boris");
-		aList.add("Leonidas");
+		public LambdaLista() {
 
+			aList.add("Eze");
+			aList.add("Lore");
+			aList.add("Valen");
+			aList.add("Perez");
+			aList.add("Boris");
+			aList.add("Leonidas");	
+		}
+
+		public void simplePrint() {
+			System.out.println("--- LISTA SIN ORDENAR ---");
+			aList.forEach(System.out::println);
+		}
+		public void filterAPIStream(String filter) {
+			
+			System.out.println("--- LISTA FILTRADA POR CRITERIO " +filter+" ---");
+			aList.stream().filter(x -> x.startsWith(filter)).forEach(System.out::println);
+		}
 		
-//		Collections.sort(aList, (String str1, String str2) -> str1.compareTo(str2));
-		Collections.sort(aList, String::compareToIgnoreCase);
-		aList.forEach((aName) -> System.out.println(aName));
-
+		public void orderAPIStream() {
+			System.out.println("--- LISTA ORDENADA: ASC ---");
+			aList.stream().sorted().forEach(System.out::println);
+			
+			System.out.println("--- LISTA ORDENADA: DESC ---");
+			aList.stream().sorted( (x,y) -> y.compareTo(x)).forEach(System.out::println);
+			
+		}
 		
-	}
-	
-	public double interfazFuncional() {
-		
-		IOperation aOperation = (double x, double y) -> (x+y)/2;
-		return aOperation.calcularPromedio(3, 9.1);
-	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		LambdaLista aLambdaLista = new LambdaLista();
-//		aLambdaLista.orderList();
-		System.out.println( aLambdaLista.interfazFuncional());
-	}
-
+		public void countAPIStream() {
+			System.out.println("--- CANTIDAD DE ELEMENTOS ---");
+			System.out.println(aList.stream().count());
+		}
 }
