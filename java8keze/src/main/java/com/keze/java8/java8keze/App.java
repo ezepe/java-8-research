@@ -23,14 +23,16 @@ public class App
 //    	uPS.testSimpleStream();
 //    	uPS.testParallelStream();
     	
-    	UsingMap uM = new UsingMap();
+//    	UsingMap uM = new UsingMap();
 //    	uM.simplePrint();
     	
-    	uM.putIsAbsent();
+//    	uM.putIsAbsent();
 //    	uM.computeIsPresent();
 //    	uM.getOrDefault();
 //    	uM.newPrint();
-    	uM.RecoletWithFilter();
+//    	uM.RecoletWithFilter();
     
+    	UsingHighOrderFunctions uHOF = new UsingHighOrderFunctions();
+    	uHOF.toPrint(uHOF.convertToUpperCase, "pepe");
     }
 }
